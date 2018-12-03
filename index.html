@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Talk: Criptografia RSA</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css">
@@ -23,9 +23,136 @@
 	</head>
 	<body>
 		<div class="reveal">
+			<!--1-->
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section id="1.0">
+					<section data-markdown>
+						# *Criptografia RSA*
+						### Introdução e pré-codificação
+						#### Feito por:
+
+						&gt; João Marcos e Vinicius Fernandes
+					</section>
+					<section data-markdown>
+						Disponível em:
+						&gt; [github.com/marcospb19/myPresentations](github.com/marcospb19/myPresentations)
+
+						Apresentação feita com reveal.js
+						&gt; [revealjs.com](https://revealjs.com)
+					</section>
+				</section>
+			<!-- 2 -->
+			<section data-markdown>
+				## _Objetivos_
+				&gt; Introduzir conceitos iniciais de criptografia, apresentar seus usos, e explicar seu funcionamento
+			</section>
+			<!-- 3.1 3.2 -->
+			<section>
+				<section>
+					<h1>'Começando do COMEÇO'</h1>
+					<small>rapidamente...</small>
+				</section>
+				<section data-markdown="">
+					## Etimologia
+					### Criptografia:
+					Do grego:
+					&gt; kruptós \&gt;  oculto/secreto/ininteligível
+
+					 +
+
+					&gt; graphía \&gt;  escrita
+
+					"*_Escrita Oculta_*"
+				</section>
+				<section data-markdown>
+					## Nas palavras da Epp.:
+
+					&gt; "Criptografia é o estudo dos métodos de enviar mensagens secretas."
+
+					&gt; "Criptografar é o ato de transformar um texto puro em um texto encriptado."
+
+				</section>
+
+				<section data-markdown>
+					&gt; Texto puro (plaintext)
+
+					&gt; Texto encriptado (ciphertext)
+
+					## O que é isso?
+				</section>
+
+				<section data-markdown>
+					&gt; A criptografia tem como objetivo esconder o conteúdo de uma mensagem, para que somente o destinatário desejado possa entende-la
+
+					&gt; Isto é: se outra pessoa interceptar a mensagem, ela não deverá conseguir entender esse conteúdo
+				</section>
+
+				<section data-markdown>
+					Se dividirmos em etapas:
+					&gt; O remetente escreve a mensagem de uma 'maneira diferente'
+
+					&gt; Se alguém interceptar, não deverá conseguir ler
+
+					&gt; Quando o destinatário desejado receber, ele deve poder acessar o conteúdo
+				</section>
+
+			</section>
+
+
+
+
+			<section>
+
+				<section data-markdown>
+					## Vamos praticar:
+
+					Uma situação HIPOTÉTICA:
+
+					Imagine que Vinicius não fez nada o trabalho inteiro, e eu quero contar para Rafaela, mas ele está por acaso presente na sala
+
+
+				</section>
+
+				<section data-markdown>
+					Vamos usar a Cifra de César (Caesar Cipher) para criar uma correspondência única entre as letras e assim criptografar a seguinte mensagem para Rafaela:
+
+					&gt; Fez nada
+
+					## :D
+				</section>
+
+				<section>
+					<img width="WIDTH" height="620" data-src="https://i.pinimg.com/originals/6a/a8/ac/6aa8ac933874c724f1aa56ccfa1e91e5.jpg">
+				</section>
+
+				<section data-markdown>
+					Se seguirmos a cifra
+
+					&gt; Fez nada
+
+					virará
+
+					&gt; Edy mzcz
+				</section>
+
+				<section data-markdown>
+					&gt; Vamos voltar para a cifra para analisar o que acontece com a primeira e a última letra do alfabeto,
+
+					&gt; (olhem para o número que aparece na parte de cima)
+				</section>
+
+				<section data-markdown>
+					&gt; O número pequeno mostra o disco foi girado 25 casas, preste atenção que se ele girar mais uma vez, vai parar exatamente no 0, que é onde começou
+
+
+					&gt; Considerando que estamos trabalhando com 26 letras, podemos analisar a classe dos restos de divisões por 26, que vão de 0 até 25, inclusive (exatamente o número máximo que aparece)
+				</section>
+			</section>
+			<section data-markdown>
+				# Obrigado!
+				## ;D
+			</section>
+
 			</div>
 		</div>
 
