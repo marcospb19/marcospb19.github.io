@@ -34,7 +34,6 @@
 						&gt; João Marcos e Vinicius Fernandes
 					</section>
 					<section data-markdown>
-						AJEITAR
 						Disponível em:
 						&gt; [marcospb19.github.io](https://marcospb19.github.io)
 
@@ -50,8 +49,8 @@
 			<!-- 3.1 3.2 -->
 			<section>
 				<section>
-					<h1>'Começando do COMEÇO'</h1>
-					<small>rapidamente...</small>
+					<h1>Começando do 0</h1>
+					<small>Criptografia?</small>
 				</section>
 				<section data-markdown="">
 					## Etimologia
@@ -107,11 +106,9 @@
 				<section data-markdown>
 					## Vamos praticar:
 
-					Uma situação HIPOTÉTICA:
+					Uma situação hipotética:
 
 					Imagine que Vinicius não fez nada o trabalho inteiro, e eu quero contar para Rafaela, mas ele está por acaso presente na sala
-
-
 				</section>
 
 				<section data-markdown>
@@ -139,7 +136,7 @@
 				<section data-markdown>
 					&gt; Vamos voltar para a cifra para analisar o que acontece com a primeira e a última letra do alfabeto,
 
-					&gt; (olhem para o número que aparece na parte de cima)
+					&gt; (Vamos olhar para o número que aparece na parte superior, e comparar com um relógio)
 				</section>
 
 				<section data-markdown>
@@ -149,9 +146,75 @@
 					&gt; Considerando que estamos trabalhando com 26 letras, podemos analisar a classe dos restos de divisões por 26, que vão de 0 até 25, inclusive (exatamente o número máximo que aparece)
 				</section>
 			</section>
+
 			<section>
+				<section>
+					<img width="1000" height="462" data-src="https://i.imgur.com/uwBeX65.png">
+				</section>
+
+				<section>
+					<img width="1000" height="462" data-src="https://i.imgur.com/fNJTOou.png">
+				</section>
+
+				<section>
+					<img width="1000" height="462" data-src="https://i.imgur.com/Cd7pPdV.png">
+				</section>
+
 
 			</section>
+
+			<section>
+				<section data-markdown>
+					### Outro exemplo
+
+					Vamos inventar um cenário:
+
+					public-key: 3 10
+
+					secret: ?
+
+					> Vamos trabalhar com a palavra "CHEF"
+				</section>
+
+				<section data-markdown>
+					Transformando para números:
+
+					CHEF -> 3 8 5 6
+				</section>
+				<section data-markdown>
+					Alguns códigos multiplicam, subtraem, no nosso caso, a chave vai elevar todos os números por 3
+
+					3 8 5 6
+
+					27 512 125 216
+
+					Agora podemos ter n mod 10 para os 4 números n
+
+					7 2 5 6
+				</section>
+				<section data-markdown>
+					E agora?
+					Bom, a chave segredo nesse caso é 3 pelo seguinte motivo:
+					As chaves utilizam vários métodos aleatórios para processar números, no nosso caso, a regra de volta será definida de um jeito que o segredo seja 3, e consiga decodificar.
+				</section>
+				<section data-markdown>
+					Temos 7 2 5 6
+
+					Vamos elevar por 3 novamente
+
+					343 8 125 216, agora pegamos o resto da divisão por 10
+
+					3 8 5 6 -> chef
+
+				</section>
+				<section data-markdown>
+					O que mais importa nesse problema, é o número 10 que apareceu no início
+
+					10 é resultado da multiplicação de dois primos, 2 e 5, quanto maiores os dois primos multiplicados, maior a dificuldade para fatorar os números e achar as etapas.
+				</section>
+
+			</section>
+
 			<section>
 				<h2>Questões</h2>
 					<ol>
@@ -161,6 +224,64 @@
 						<li>Decodifique a palavra "Dchgx", sabendo que foi codificada avançando 50 letras.</li>
 					</ol>
 			</section>
+
+			<section>
+				<section data-markdown>
+					## Extras:
+					Como gerar uma chave pública no linux:
+
+					ssh-keygen (e aperta enter algumas vezes)
+
+					> A chave pública:
+				</section>
+				<section>
+					<p>389 caracteres</p>
+				<small>ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDs+on4YyzO4xAlU9Lxlgq7CZU5hfMevTOf/a+UnKYsKBInzgoqXRFmo/tfFRSfP91A6LfArP6cjDA+jDQDTiwOcTmaav46EJXGZz4vc11KRc/EN9IhOsIsCn64l7S9HMNgbcHEUUCwRPGZAMcFocKvOTC0XmMh+En7z8dfeXyFMv/u7OeRm4FNZjhqf2JydQ+Zz6IYktt5w5F91CK0dJnLriiD52Nd5/UalEpmTHh6Y/7rHS3jiQ7LUQ06TZIRKTgPQu++AdmBfvIXB7d1SVBV0shT9peOXiVBzZQw30EnSggJPHQ5VtcG9f5kw2BmjnAU/5JmM3e5+rEFjlZ7JJU5 marcospb19@laptop</small>
+				</section>
+				<section data-markdown>
+					 #### E agora o seu par, a chave privada:
+				</section>
+
+				<section>
+					<p>1612 caracteres</p> <small>MIIEowIBAAKCAQEA7PqJ+GMszuMQJVPS8ZYKuwmVOYXzHr0zn/2vlJymLCgSJ84KKl0RZqP7XxUUnz/dQOi3wKz+nIwwPow0A04sDnE5mmr+OhCVxmc+L3NdSkXPxDfS
+ITrCLAp+uJe0vRzDYG3BxFFAsETxmQDHBaHCrzkwtF5jIfhJ+8/HX3l8hTL/7uznkZuBTWY4an9icnUPmc+iGJLbecORfdQitHSZy64og+djXef1GpRKZkx4emP+6x0t
+44kOy1ENOk2SESk4D0LvvgHZgX7yFwe3dUlQVdLIU/aXjl4lQc2UMN9BJ0oICTx0OVbXBvX+ZMNgZo5wFP+SZjN3ufqxBY5WeySVOQIDAQABAoIBAQCoQP4iuC+BOKAn
+EIvt8SzvPU+RBvTl90mnJ5Q5PLuTEGRLlLOM/oUzTexUxv/cTZjG1DRa/bjM54/9aMgpLKCFJIjUhXC5QztEIdt6DzvGVyi71TJBW5mvcUglwbiWqMxjM6pmu5XlUR4E
+FxQ3gHFcvYtCFN3nqYTF3/FbbUMmwgA6cm/Z7U1mnlVTwA26HDpcnztYyP6Pcgw8UzvuYGC74jvFawrx8cZFlx4Td9vYeppWXnQ7RgJJaPJwbWSTT79jZ7XbfSsHxzrE
+Q/cPcyb/uUOyCClUyhdunOCqEbDThJGCGHddJS1WeB5pbMuM9/EJ35u6YvVT8/CMahgWwKOBAoGBAPrHeIToZEfjXqlqcwm5O4lV1nGM2uU2R7jzJCDso+21Y5GkeJxA
+MT8vi5/c0PRTnNgdSdXbf0MqZA7imUut0G9yzDDlvW0gah5Z1ppJhJW30N6pLZ3lPHIpQf7VmFItgzsjrSa0WC2itZW+pIipIuzPJyCWChwxzrxPX/UlCUyRAoGBAPHp
+hKs3LOrzAcxxW/yXTSm43AOlb+0bOXP37UcvzRysL4MHsJOD/11wB67ljGY0LXkuZfBogP9z0OLZNyCosxcgDwU0fgX8upAl12EZKRgbwjH2pLYjcuSAurndvh4aKE6Y
+iTckBMhNWdluUi3nSm+8vq6pfHwDtgpgG+F2AzIpAoGAExBS0xevd9+K9KoI8LZKFliWIq+ofEAyF5c0KeSTWaCuXwX3vTkMBVeh75cjs08f3zXqxP0YoYx5asBDEwO1
+kqNRbm4ohkEuj/wYWkY4dAEzOZn2w8gHXk5QnAS0vZqEHVzK7uRKx71UvHtvmovxAbuFp+5/+kC3DI2kJ8iW+mECgYA2+xrzCvxDfe2HuK/ubbjU5bXjgkM5AXoCWHPu
+PPgCL0QxJJtGO7bbVq34WyWYyP0Y0KnMhQPkiz8Lf9DetFjXxaqERVTrKXCBeIhGAkDrwMtXLbZrywy+0F8gBTzDfLByhIqTJLWNjL8CAufclPe/A4fXDKBFU1aZbxSH
+HppFWQKBgAluQip1qOHaxsKsUgTH9fi+giB3qljCOW/eOuc8uugiy9eTuVANYyZDZy826cVA5NOWiN9l58/DNd2jbfM98+P1TbwhuKzP6CuvAuUSBubFOOGwg354Kk9K
+yglo8bxbb4mKm1m5hwrLIpJXBEBOup1PhB7xnLGCd8jwHUKaq86l</small>
+				</section>
+				<section data-markdown>
+					Note o tamanho do sistema de numeração (64 bits!)
+
+					> 8 bytes, 1612 vezes
+
+					O número de possibilidades:
+
+					64 elevado à 1612 !!?!
+				</section>
+
+				<section data-markdown>
+					## Links de vídeos com conceitos explicados:
+					[youtube.com/watch?v=6H_9l9N3IXU](https://www.youtube.com/watch?v=6H_9l9N3IXU)
+					[youtube.com/watch?v=M7kEpw1tn50](https://www.youtube.com/watch?v=M7kEpw1tn50)
+				</section>
+
+			</section>
+
+			<section data-markdown>
+				# Fim
+				## :D
+			</section>
+
+
+
 
 			</div>
 		</div>
