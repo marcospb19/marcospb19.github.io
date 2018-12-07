@@ -153,33 +153,73 @@
 					Infelizmente o slide não contém tudo que foi apresentado:
 
 					Nessa parte, explicamos como funciona o sistema de chaves públicas e privadas, fizemos ilustrações com os esquemas
-
-					#### VEJA REFERÊNCIAS NO FINAL
-				</section>
-
-				<section>
-					<img width="1000" height="462" data-src="https://i.imgur.com/uwBeX65.png">
-				</section>
-
-				<section>
-					<img width="1000" height="462" data-src="https://i.imgur.com/fNJTOou.png">
 				</section>
 
 				<section>
 					<img width="1000" height="462" data-src="https://i.imgur.com/Cd7pPdV.png">
 				</section>
 
+				<section data-markdown>
+					> As duas chaves são sempre geradas em duplas, significa que a chave primária é feita junto com a chave pública, e cada uma depende da outra
+				</section>
+
+				<section data-markdown>
+					> A chave pública SOMENTE encripta (embaralha) os dados, para lê-los, utiliza-se o grande segredo: a chave privada, com ela, toda a criptografia é facilmente quebrada
+				</section>
+
+				<section data-markdown>
+					> A criptografia RSA funciona pois é quase impossível obter a chave privada se ela for bem guardada, é como se todos possuissem o cadeado, uma vez fechado, agora precisa de uma chave específica, porém ela está bem guardada
+				</section>
+
+				<section data-markdown>
+					> Agora que você entendeu o que as chaves fazem, imagine a seguinte situação: Um usuário quer receber uma foto de um banco de dados, ISSO NÃO FUNCIONARIA, pois quando o banco criptografasse a foto, ninguém mais poderia abrir-la
+				</section>
+
+				<section data-markdown>
+					> Como ninguém pode ler o que foi criptografado pelo banco, vamos ter que usar uma OUTRA CHAVE
+				</section>
+
+				<section data-markdown>
+					### Outra chave
+					> O usuário irá CRIAR uma chave privada nova e própria, irá enviar para o banco utilizando a sua chave pública (assim só ele saberá ler), então o banco e o usuário terão agora uma chave própria, os dois podem mesclar e desmesclar as informações
+				</section>
+
+
+				<section>
+					<img width="1000" height="462" data-src="https://i.imgur.com/uwBeX65.png">
+				</section>
+
+				<section data-markdown>
+					## Resumo do que foi dito:
+
+					> As chaves públicas, como o nome indicam, estão disponíveis para todos, dessa maneira todos podem encriptar, mas não decriptar as mensagens
+				</section>
+
+				<section data-markdown>
+					> Então, assim um banco pode enviar a chave para todos, então o usuário encripta sua mensagem, e mesmo que ele coloque-a na internet para todos, ninguém poderá compreender-lá pois para isso precisa-se da CHAVE PRIVADA
+				</section>
+
+				<section>
+					<img width="1000" height="462" data-src="https://i.imgur.com/fNJTOou.png">
+				</section>
+
+				<section data-markdown>
+					> Assim, fazemos a criptografia ponta-a-ponta, os dois podem usar a chave privada para criptografar e descriptografar, essa nova chave primária, pode fazer a ida e volta, porém, só o banco e o usuário às possuem
+				</section>
+
+				<section data-markdown>
+					> O motivo pelo qual é inviável obter uma chave privada através da chave pública, é que você precisaria fatorar a chave pública, e obter os dois números primos que o compõem, e nós não sabemos (ainda) uma maneira de fazer isso, além dos algoritmos de força bruta, que consistem em testar CADA CASO POSSÍVEL
+				</section>
+
+				<section data-markdown>
+					> Como os dois primos que formama chave pública são enormes, e formam um número com até 2048 bits (número pode variar por serviço), fatorar uma chave pública com um computador moderno pode demorar pouco menos do que a idade do nosso universo
+				</section>
+
 
 			</section>
 
-			<section>
-				<section data-markdown>
-					Nessa parte explicamos no quadro como enumerar cada letra e fazer as transformações somando, subtraindo e fazendo o resto de divisão por 26 (assunto inclusive trabalhado pelos outros dois grupos posteriores)
-				</section>
-				<section data-markdown>
-					~ explicação ~
-				</section>
-
+			<section data-markdown>
+				Nessa parte explicamos no quadro como enumerar cada letra e fazer as transformações somando, subtraindo e fazendo o resto de divisão por 26 (assunto inclusive trabalhado pelos outros dois grupos posteriores)
 			</section>
 
 			<section>
